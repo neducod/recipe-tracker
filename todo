@@ -1,1 +1,15 @@
 Save username in backend
+Edit Username later
+✏ Edit recipes
+
+🗑 Delete recipes
+
+🎨 Tailwind CSS styling
+
+📷 Upload images for recipes
+
+🧑‍🍳 Profile page (update username/email)
+
+🔐 Reset password / forgot password
+
+💾 Save recipes offline (localStorage + Firestore)
