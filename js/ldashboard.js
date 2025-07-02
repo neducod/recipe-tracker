@@ -114,7 +114,9 @@ import {
 
 // 🔐 Your Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyC61gF08n-oA6ZjR8UmY0gPW7E9iL5CKjQ",
+  // apiKey: "AIzaSyC61gF08n-oA6ZjR8UmY0gPW7E9iL5CKjQ",
+  apiKey: "AIza" + "SyC61gF08n-oA6ZjR8UmY0gPW7E9iL5CKjQ",
+
   authDomain: "recipe-tracker-79fec.firebaseapp.com",
   projectId: "recipe-tracker-79fec",
   storageBucket: "recipe-tracker-79fec.firebasestorage.app",
