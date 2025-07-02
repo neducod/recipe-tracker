@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recipe Tracker - Dashboard</title>
+  <link rel="shortcut icon" href="./img/J.png" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Showcasing professional frontend development projects using HTML, CSS, JavaScript, and Tailwind CSS. Explore my skills, responsive designs, and contact me for web development opportunities.">
+
+  <meta property="og:site_name" content="Josephine Jerome | Frontend Developer">
+  <meta property="og:url" content="https://x.com/nedu_nony/">
+  <meta property="og:url" content="https://x.com/nedu_nony/">
+  <meta property="og:title" content="Josephine Jerome">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Josephine Jerome Portfolio | Frontend Developer."><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Josephine Jerome">
+<meta name="twitter:description" content="Frontend Developer.">
+  <meta name="keywords" content="Frontend Developer, HTML, CSS, JavaScript, Tailwind CSS, Responsive Web Design, Portfolio Website, Web Developer, UI Developer, Freelance Web Developer">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 min-h-screen p-6">
+  <h2 id="welcome-text" class="text-2xl font-bold">Loading...</h2>
+
+  <div class="flex gap-4 border-b mb-4">
+    <button id="tab-recipes" class="tab-btn text-blue-600 border-b-2 border-blue-600 font-semibold pb-2">My Recipes</button>
+    <button id="tab-profile" class="tab-btn text-gray-500 hover:text-blue-600 pb-2">Profile Settings</button>
+  </div>
+
+
+
+  <section class="mb-4" id="recipes-panel">
+    <h3>Add New Recipe</h3>
+    <form id="recipe-form">
+      <input type="text" id="title" placeholder="Recipe Title" required class="text-sm text-gray-700" /><br><br>
+      <textarea id="instructions" placeholder="Instructions" required  class="text-sm text-gray-700"  ></textarea><br><br>
+      <button type="submit" class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700">Save Recipe</button>
+    </form>
+
+    <section class="grid gap-4 md:grid-cols-2">
+      <h3>Your Recipes</h3>
+      <ul id="recipe-list" class="border border-gray-100 shadow w-[360px] p-8 rounded-md bg-white"></ul>
+    </section>
+  </section>
+  <hr>
+  <!--  -
+  <section class="grid gap-4 md:grid-cols-2">
+    <h3>Your Recipes</h3>
+    <ul id="recipe-list" class="border border-gray-100 shadow w-[360px] p-8 rounded-md bg-white"></ul>
+  </section>
+-->
+  <div id="profile-panel" class="hidden">
+    <form id="profile-form" class="space-y-4">
+      <div>
+        <label class="block font-medium">Current Email</label>
+        <input type="email" id="email" class="w-full border p-2 rounded bg-gray-100" disabled />
+      </div>
+      <div>
+        <label class="block font-medium">Username</label>
+        <input type="text" id="username" class="w-full border p-2 rounded" />
+      </div>
+      <div>
+        <label class="block font-medium">New Email</label>
+        <input type="email" id="new-email" class="w-full border p-2 rounded" />
+      </div>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Changes</button>
+    </form>
+  </div>
+
+
+  <button id="signout-btn" class="mt-6 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Sign Out</button>
+
+  <div id="toast" class="fixed top-4 right-4 z-50 hidden px-4 py-3 rounded shadow text-white text-sm"></div>
+
+  <script type="module" src="./js/ldashboard.js"></script>
+</body>
+</html>
