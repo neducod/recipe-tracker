@@ -237,7 +237,6 @@ recipeForm.addEventListener("submit", async (e) => {
 
   const title = document.getElementById("title").value;
   const instructions = document.getElementById("instructions").value;
-  // const imageUrl = document.getElementById("recipe-image").value;
 
 
   try {
