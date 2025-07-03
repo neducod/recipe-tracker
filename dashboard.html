@@ -18,12 +18,20 @@
 <meta name="twitter:title" content="Josephine Jerome">
 <meta name="twitter:description" content="Frontend Developer.">
   <meta name="keywords" content="Frontend Developer, HTML, CSS, JavaScript, Tailwind CSS, Responsive Web Design, Portfolio Website, Web Developer, UI Developer, Freelance Web Developer">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/tailwind.css">
+
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-pink-50 min-h-screen p-4">
   <div class="max-w-4xl mx-auto">
 
-  <h2 id="welcome-text" class="text-2xl font-bold">Loading...</h2>
+  <h2 id="welcome-text" class="text-2xl font-bold">Loading...</h2> <hr>
 
   <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6">
     <button id="tab-recipes" class="tab-btn text-blue-600 border-b-2 border-blue-600 font-semibold pb-2">My Recipes</button>
@@ -32,17 +40,19 @@
 
 
 
-  <section class="mb-4" id="recipes-panel" class="space-y-6">
+  <section class="mb-4 mt-4" id="recipes-panel" class="space-y-6">
     <h3>Add New Recipe</h3>
-    <form id="recipe-form">
-      <input type="text" id="title" placeholder="Recipe Title" required class="text-sm text-gray-700" /><br><br>
-      <textarea id="instructions" placeholder="Instructions" required  class="text-sm text-gray-700"  ></textarea><br><br>
+    <form id="recipe-form" class="bg-white rounded-xl p-4 sm:p-6 max-w-md w-full mx-auto space-y-4">
+      <input type="text" id="title" placeholder="Recipe Title" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" /><br><br>
+      <textarea id="instructions" placeholder="Instructions" required  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" ></textarea><br><br>
+
       <button type="submit" class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700">Save Recipe</button>
     </form>
 
-    <section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      <h3>Your Recipes</h3>
-      <ul id="recipe-list" class="border border-gray-100 shadow w-[360px] p-8 rounded-md bg-white"></ul>
+    <hr class="mt-4">
+    <section class="mt-10 px-4 max-w-6xl mx-auto">
+      <h3 class="text-2xl font-semibold text-pink-700 mb-6 text-center sm:text-left">Your Recipes</h3>
+      <ul id="recipe-list" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3" ></ul>
     </section>
   </section>
   <hr>
@@ -86,7 +96,3 @@
   <script type="module" src="./js/ldashboard.js"></script>
 </body>
 </html>
-<!-- 
-  my recipe div class="flex gap-4 border-b mb-4"   
- class="grid gap-4 md:grid-cols-2" 
- -->
