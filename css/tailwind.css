@@ -25,7 +25,7 @@ body {
 }
 #p{
     text-align: center;
-    width: 400px;
+    /* width: 400px; */
     color: rgb(220, 164, 173);
 }
 #fancy{
