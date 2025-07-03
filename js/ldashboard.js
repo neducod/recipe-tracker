@@ -231,18 +231,21 @@ profileForm.addEventListener("submit", async (e) => {
   
   //tesing a code
 
-// ✅ 2. Save new recipe
+// My code to  Save new recipe; recipe form feature
 recipeForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const title = document.getElementById("title").value;
   const instructions = document.getElementById("instructions").value;
+  const imageUrl = document.getElementById("recipe-image").value;
+
 
   try {
     await addDoc(collection(db, "recipes"), {
       userId: currentUser.uid,
       title,
       instructions,
+      imageUrl: imageUrl,
       createdAt: new Date()
     });
 
@@ -349,12 +352,12 @@ async function loadRecipes(userId) {
     titleEl.textContent = recipe.title;
 
     const instructionsEl = document.createElement("p");
-    instructionsEl.className = "text-sm text-gray-700 mb-2";
+    instructionsEl.className = "text-sm text-gray-600 mt-2";
     instructionsEl.textContent = recipe.instructions;
 
     const editBtn = document.createElement("button");
     editBtn.textContent = "Edit";
-    editBtn.className = "bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600";
+    editBtn.className = "bg-pink-500 text-white px-3 py-1 rounded hover:bg-pink-600";
 
     li.appendChild(titleEl);
     li.appendChild(instructionsEl);
@@ -363,6 +366,22 @@ async function loadRecipes(userId) {
     // Edit handler
     editBtn.addEventListener("click", () => {
       // Replace with input fields
+      const recipeItem = document.createElement("li");
+      recipeItem.className = "p-4 bg-white rounded-xl shadow border border-gray-200";
+
+
+      recipeItem.innerHTML = `
+      ${recipe.imageUrl ? `<img src="${recipe.imageUrl}" alt="Recipe Image" class="w-full h-40 object-cover rounded-md mb-3">` : ""}
+      <h4 class="text-lg font-semibold text-pink-600">${recipe.title}</h4>
+      <p class="text-sm text-gray-600 mt-1">Ingredients: ${recipe.ingredients}</p>
+      <div class="flex justify-end mt-4 gap-4">
+        <button class="text-sm text-blue-600 hover:underline">Edit</button>
+        <button class="text-sm text-red-600 hover:underline">Delete</button>
+      </div>
+    `;
+
+
+
       const titleInput = document.createElement("input");
       titleInput.value = recipe.title;
       titleInput.className = "w-full border px-2 py-1 rounded mb-2";
@@ -452,7 +471,7 @@ async function loadRecipes(userId) {
 signoutBtn.addEventListener("click", async () => {
   await signOut(auth);
   console.log("👋 Signed out");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 });
 
 
