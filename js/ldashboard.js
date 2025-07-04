@@ -244,7 +244,6 @@ recipeForm.addEventListener("submit", async (e) => {
       userId: currentUser.uid,
       title,
       instructions,
-      imageUrl: imageUrl,
       createdAt: new Date()
     });
 
