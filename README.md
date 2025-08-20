@@ -37,10 +37,3 @@ Users can sign up, log in, and save their recipes with details like title, ingre
 - **Hosting:** Firebase Hosting / Netlify (planned)
 
 ---
-
-## ⚙️ Getting Started
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/your-username/recipe-tracker.git
-cd recipe-tracker
