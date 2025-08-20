@@ -12,3 +12,35 @@ Add their own recipes (from what they learned or created)
 View, search, and edit their saved recipes
 
 Sync across devices
+
+
+
+
+# 🍳 Recipe Tracker
+
+A simple recipe tracker web app built with **Vanilla JavaScript, Tailwind CSS, and Firebase**.  
+Users can sign up, log in, and save their recipes with details like title, ingredients, and instructions.
+
+---
+
+## 🚀 Features
+- 🔐 User Authentication (Signup & Login with Firebase Auth)
+- 📖 Save and display recipes
+- 📱 Responsive design with Tailwind CSS
+- 🔒 Secure Firebase integration
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** HTML5, Tailwind CSS, JavaScript (ES6+)
+- **Backend:** Firebase Authentication & Firestore
+- **Hosting:** Firebase Hosting / Netlify (planned)
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/your-username/recipe-tracker.git
+cd recipe-tracker
