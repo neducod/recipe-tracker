@@ -37,3 +37,16 @@ Users can sign up, log in, and save their recipes with details like title, ingre
 - **Hosting:** Firebase Hosting / Netlify (planned)
 
 ---
+ Implement Image Upload for Recipes (Firebase Storage)
+
+ Add Success & Error Toast Alerts
+
+ Add Reset Password functionality
+
+ Create User Profile Page (update username/email)
+
+ Redesign Dashboard with Tabs (My Recipes, Profile Settings, etc.)
+
+ Deploy to Firebase Hosting or Netlify
+
+ Polish UI (better styling for recipe cards)
