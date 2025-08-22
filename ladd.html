@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Recipe – BakeBook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 min-h-screen p-6">
+  <div class="max-w-2xl mx-auto bg-white p-6 rounded-2xl shadow-md">
+    <h1 class="text-2xl font-bold mb-4 text-pink-700">Add New Recipe</h1>
+
+    <form id="recipe-form" class="space-y-4">
+      <div>
+        <label class="block font-medium">Title</label>
+        <input type="text" id="title" required class="w-full p-2 border rounded-lg" />
+      </div>
+
+      <div>
+        <label class="block font-medium">Ingredients</label>
+        <textarea id="ingredients" required rows="4" class="w-full p-2 border rounded-lg"></textarea>
+      </div>
+
+      <div>
+        <label class="block font-medium">Instructions</label>
+        <textarea id="instructions" required rows="6" class="w-full p-2 border rounded-lg"></textarea>
+      </div>
+
+      <button type="submit" class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700">
+        Save Recipe
+      </button>
+
+      <p id="form-msg" class="text-sm text-center mt-2 text-green-600"></p>
+    </form>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"></script>
+  <script type="module" src="js/add.js"></script>
+</body>
+</html>
