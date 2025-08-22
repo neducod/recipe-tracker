@@ -1,43 +1,52 @@
 <!-- SIGNUP PAGE. BUILT WITH LOVE BY JOSEPHINE JEROME -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recipe Tracker - Sign Up</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/custom.css">
+
   <link rel="shortcut icon" href="./img/J.png" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Showcasing professional frontend development projects using HTML, CSS, JavaScript, and Tailwind CSS. Explore my skills, responsive designs, and contact me for web development opportunities.">
+  <meta name="description"
+    content="Showcasing professional frontend development projects using HTML, CSS, JavaScript, and Tailwind CSS. Explore my skills, responsive designs, and contact me for web development opportunities.">
 
   <meta property="og:site_name" content="Josephine Jerome | Frontend Developer">
   <meta property="og:url" content="https://x.com/nedu_nony/">
   <meta property="og:url" content="https://x.com/nedu_nony/">
   <meta property="og:title" content="Josephine Jerome">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="Josephine Jerome Portfolio | Frontend Developer."><meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Josephine Jerome">
-<meta name="twitter:description" content="Frontend Developer.">
-  <meta name="keywords" content="Frontend Developer, HTML, CSS, JavaScript, Tailwind CSS, Responsive Web Design, Portfolio Website, Web Developer, UI Developer, Freelance Web Developer">
+  <meta property="og:description" content="Josephine Jerome Portfolio | Frontend Developer.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Josephine Jerome">
+  <meta name="twitter:description" content="Frontend Developer.">
+  <meta name="keywords"
+    content="Frontend Developer, HTML, CSS, JavaScript, Tailwind CSS, Responsive Web Design, Portfolio Website, Web Developer, UI Developer, Freelance Web Developer">
 </head>
-<body  class="bg-pink-50 min-h-screen flex items-center justify-center px-4">
-    <div   class="w-full max-w-sm bg-white p-6 sm:p-8 rounded-xl shadow-md" >
-        <h1 class="text-2xl font-bold text-center text-pink-700 mb-4" >Sign Up</h1>
-        <form action="#" id="signup-form" class="space-y-4">
-            <input type="text" id="username" placeholder="Username" required class="w-full p-2 border rounded-lg"   /><br>
-            <input type="email" id="email" placeholder="Email" required  class="w-full p-2 border rounded-lg"  />
-            <input type="password" id="password" placeholder="Password" required class="w-full p-2 border rounded-lg"/>
-            <button type="submit" class="w-full bg-pink-600 text-white py-2 rounded-lg hover:bg-pink-700 transition" >Sign Up</button>
-            <p>Already have an account <a href="./index.html" class="text-pink-700">login</a></p>
-        </form>
-        <p id="error-message" style="color: red;"></p>
-    </div>
+
+<body class="body">
+  <div class="center-body">
+    <h1 class="signup-header">Sign Up</h1>
+    <form action="#" id="signup-form" class="space-y-4">
+      <input type="text" id="username" placeholder="Username" required class="w-full p-2 border rounded-lg" /><br>
+      <input type="email" id="email" placeholder="Email" required class="w-full p-2 border rounded-lg" />
+      <input type="password" id="password" placeholder="Password" required class="w-full p-2 border rounded-lg" />
+      <button type="submit" class="btn signup-btn">Sign
+        Up</button>
+      <p>Already have an account ? <a href="./index.html" class="text-pink-700">login</a></p>
+    </form>
+    <p id="error-message" style="color: red;"></p>
+  </div>
 
   <!-- Firebase SDK -->
-  <script  type="module"  src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-  <script  type="module"  src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
   <script type="module" src="./js/firebaseconfig.js"></script>
 </body>
+
 </html>
 
 <!-- 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search page</title>
+  <link rel="stylesheet" href="./css/custom.css">
+  <link rel="stylesheet" href="./css/search.css">
+  <script defer src="./js/search.js"></script>
+</head>
+
+<body class="">
+  <h1 class="primary-heading" style="text-align: center;">Search any recipe in the world with just a click.</h1>
+  <!-- Search bar -->
+  <form class="search">
+    <input type="text" class="search__field" placeholder="Search over 1,000,000 recipes..." />
+    <button class="btn search-btn">
+      <span>Search</span>
+    </button>
+  </form>
+  <div class="container grid grid--2-cols">
+    <div class="results">
+      <div class="loading results-loader hidden">
+        <div class="spinner"></div>
+      </div>
+      <ul class="results__list"></ul>
+    </div>
+
+    <div class="show-clicked">
+      <div class="loading clicked-loader hidden">
+        <div class="spinner"></div>
+      </div>
+      <div class="clicked-content"></div>
+    </div>
+  </div>
+
+
+
+
+</body>
+
+</html>

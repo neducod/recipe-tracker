@@ -95,11 +95,10 @@ import { updateDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-f
 
 import { deleteDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
-
 import {
   getAuth,
   onAuthStateChanged,
-  signOut
+  signOut,
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 import {
   getFirestore,
@@ -109,7 +108,7 @@ import {
   addDoc,
   query,
   where,
-  getDocs
+  getDocs,
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 // 🔐 Your Firebase config
@@ -122,9 +121,8 @@ const firebaseConfig = {
   storageBucket: "recipe-tracker-79fec.firebasestorage.app",
   messagingSenderId: "538884277391",
   appId: "1:538884277391:web:2e5721d9c60afb2ca99cfa",
-  measurementId: "G-61ENBR7C1Z"
+  measurementId: "G-61ENBR7C1Z",
 };
-
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -142,7 +140,6 @@ const newEmailInput = document.getElementById("new-email");
 const emailDisplay = document.getElementById("email"); // for showing current email
 
 //i'm testing a code
-
 
 let currentUser = null;
 
@@ -168,27 +165,23 @@ onAuthStateChanged(auth, async (user) => {
     setTimeout(() => {
       window.location.href = "login.html";
     }, 1500);
-}
+  }
 
+  //testing a code
+  // Show email in profile tab
+  emailDisplay.value = user.email;
 
-//testing a code
-// Show email in profile tab
-emailDisplay.value = user.email;
+  // Load username from Firestore
+  const userRef = doc(db, "users", user.uid);
+  const docSnap = await getDoc(userRef);
 
-// Load username from Firestore
-const userRef = doc(db, "users", user.uid);
-const docSnap = await getDoc(userRef);
+  if (docSnap.exists()) {
+    const data = docSnap.data();
+    usernameInput.value = data.username || "";
+  }
 
-if (docSnap.exists()) {
-  const data = docSnap.data();
-  usernameInput.value = data.username || "";
-}
-
-//tesing a code
+  //tesing a code
 });
-
-
-
 
 profileForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -197,39 +190,35 @@ profileForm.addEventListener("submit", async (e) => {
 
   const newUsername = usernameField.value.trim();
   const newEmail = newEmailField.value.trim();
+});
 
-  });
+//testing a code
+profileForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
+  const newUsername = usernameInput.value.trim();
+  const newEmail = newEmailInput.value.trim();
+  const user = auth.currentUser;
 
-
-
-  //testing a code
-  profileForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-  
-    const newUsername = usernameInput.value.trim();
-    const newEmail = newEmailInput.value.trim();
-    const user = auth.currentUser;
-  
-    try {
-      if (newUsername) {
-        const userRef = doc(db, "users", user.uid);
-        await setDoc(userRef, { username: newUsername }, { merge: true });
-      }
-  
-      if (newEmail && newEmail !== user.email) {
-        await updateEmail(user, newEmail);
-        showToast("✅ Email updated. Please check your inbox.", "success");
-      }
-  
-      showToast("✅ Profile updated", "success");
-    } catch (error) {
-      console.error(error);
-      showToast("❌ " + error.message, "error");
+  try {
+    if (newUsername) {
+      const userRef = doc(db, "users", user.uid);
+      await setDoc(userRef, { username: newUsername }, { merge: true });
     }
-  });
-  
-  //tesing a code
+
+    if (newEmail && newEmail !== user.email) {
+      await updateEmail(user, newEmail);
+      showToast("✅ Email updated. Please check your inbox.", "success");
+    }
+
+    showToast("✅ Profile updated", "success");
+  } catch (error) {
+    console.error(error);
+    showToast("❌ " + error.message, "error");
+  }
+});
+
+//tesing a code
 
 // My code to  Save new recipe; recipe form feature
 recipeForm.addEventListener("submit", async (e) => {
@@ -238,13 +227,12 @@ recipeForm.addEventListener("submit", async (e) => {
   const title = document.getElementById("title").value;
   const instructions = document.getElementById("instructions").value;
 
-
   try {
     await addDoc(collection(db, "recipes"), {
       userId: currentUser.uid,
       title,
       instructions,
-      createdAt: new Date()
+      createdAt: new Date(),
     });
 
     console.log("✅ Recipe saved!");
@@ -279,10 +267,8 @@ async function loadRecipes(userId) {
     recipeList.appendChild(li);
   });
   */
- 
 
-
-  /*
+/*
   querySnapshot.forEach((docSnap) => {
     const recipe = docSnap.data();
     const docId = docSnap.id;
@@ -322,9 +308,6 @@ async function loadRecipes(userId) {
 }
 */
 
-
-
-
 async function loadRecipes(userId) {
   recipeList.innerHTML = "";
   console.log("📦 Loading recipes for:", userId);
@@ -355,7 +338,8 @@ async function loadRecipes(userId) {
 
     const editBtn = document.createElement("button");
     editBtn.textContent = "Edit";
-    editBtn.className = "bg-pink-500 text-white px-3 py-1 rounded hover:bg-pink-600";
+    editBtn.className =
+      "bg-pink-500 text-white px-3 py-1 rounded hover:bg-pink-600";
 
     li.appendChild(titleEl);
     li.appendChild(instructionsEl);
@@ -365,20 +349,24 @@ async function loadRecipes(userId) {
     editBtn.addEventListener("click", () => {
       // Replace with input fields
       const recipeItem = document.createElement("li");
-      recipeItem.className = "p-4 bg-white rounded-xl shadow border border-gray-200";
-
+      recipeItem.className =
+        "p-4 bg-white rounded-xl shadow border border-gray-200";
 
       recipeItem.innerHTML = `
-      ${recipe.imageUrl ? `<img src="${recipe.imageUrl}" alt="Recipe Image" class="w-full h-40 object-cover rounded-md mb-3">` : ""}
+      ${
+        recipe.imageUrl
+          ? `<img src="${recipe.imageUrl}" alt="Recipe Image" class="w-full h-40 object-cover rounded-md mb-3">`
+          : ""
+      }
       <h4 class="text-lg font-semibold text-pink-600">${recipe.title}</h4>
-      <p class="text-sm text-gray-600 mt-1">Ingredients: ${recipe.ingredients}</p>
+      <p class="text-sm text-gray-600 mt-1">Ingredients: ${
+        recipe.ingredients
+      }</p>
       <div class="flex justify-end mt-4 gap-4">
         <button class="text-sm text-blue-600 hover:underline">Edit</button>
         <button class="text-sm text-red-600 hover:underline">Delete</button>
       </div>
     `;
-
-
 
       const titleInput = document.createElement("input");
       titleInput.value = recipe.title;
@@ -390,17 +378,18 @@ async function loadRecipes(userId) {
 
       const saveBtn = document.createElement("button");
       saveBtn.textContent = "Save";
-      saveBtn.className = "bg-green-500 text-white px-3 py-1 rounded mr-2 hover:bg-green-600";
+      saveBtn.className =
+        "bg-green-500 text-white px-3 py-1 rounded mr-2 hover:bg-green-600";
 
       const cancelBtn = document.createElement("button");
       cancelBtn.textContent = "Cancel";
-      cancelBtn.className = "bg-gray-400 text-white px-3 py-1 rounded hover:bg-gray-500";
-
+      cancelBtn.className =
+        "bg-gray-400 text-white px-3 py-1 rounded hover:bg-gray-500";
 
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "Delete";
-      deleteBtn.className = "bg-red-500 text-white px-3 py-1 rounded ml-2 hover:bg-red-600";
-
+      deleteBtn.className =
+        "bg-red-500 text-white px-3 py-1 rounded ml-2 hover:bg-red-600";
 
       // Clear old display
       li.innerHTML = "";
@@ -438,11 +427,12 @@ async function loadRecipes(userId) {
         loadRecipes(currentUser.uid); // reset
       });
 
-      
       deleteBtn.addEventListener("click", async () => {
-        const confirmDelete = confirm("Are you sure you want to delete this recipe?");
+        const confirmDelete = confirm(
+          "Are you sure you want to delete this recipe?"
+        );
         if (!confirmDelete) return;
-      
+
         try {
           const recipeRef = doc(db, "recipes", docId);
           await deleteDoc(recipeRef);
@@ -455,15 +445,11 @@ async function loadRecipes(userId) {
           // console.error("❌ Failed to delete recipe:", error);
         }
       });
-      
     });
 
     recipeList.appendChild(li);
   });
 }
-
-
-
 
 // ✅ 4. Sign out
 signoutBtn.addEventListener("click", async () => {
@@ -471,7 +457,6 @@ signoutBtn.addEventListener("click", async () => {
   console.log("👋 Signed out");
   window.location.href = "index.html";
 });
-
 
 //toast
 function showToast(message, type = "success") {
@@ -489,10 +474,7 @@ function showToast(message, type = "success") {
   }, 3500);
 }
 
-
-
-
-//profile hidden code to display 
+//profile hidden code to display
 const tabButtons = document.querySelectorAll(".tab-btn");
 const recipesPanel = document.getElementById("recipes-panel");
 const profilePanel = document.getElementById("profile-panel");
@@ -509,9 +491,8 @@ document.getElementById("tab-profile").addEventListener("click", () => {
   setActiveTab("tab-profile");
 });
 
-
 function setActiveTab(activeId) {
-  tabButtons.forEach(btn => {
+  tabButtons.forEach((btn) => {
     btn.classList.remove("text-blue-600", "border-blue-600", "font-semibold");
     btn.classList.add("text-gray-500");
     if (btn.id === activeId) {

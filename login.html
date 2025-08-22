@@ -1,46 +1,61 @@
 <!-- BUILT WITH LOVE AND CREATIVITY BY JOSEPHINE JEROME -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recipe Tracker - Login</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Showcasing professional frontend development projects using HTML, CSS, JavaScript, and Tailwind CSS. Explore my skills, responsive designs, and contact me for web development opportunities.">
+  <link rel="stylesheet" href="./css/custom.css">
 
-    <meta property="og:site_name" content="Josephine Jerome | Frontend Developer">
-    <meta property="og:url" content="https://x.com/nedu_nony/">
-    <meta property="og:url" content="https://x.com/nedu_nony/">
-    <meta property="og:title" content="Josephine Jerome">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="Josephine Jerome Portfolio | Frontend Developer."><meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Josephine Jerome">
-<meta name="twitter:description" content="Frontend Developer.">
-    <meta name="keywords" content="Frontend Developer, HTML, CSS, JavaScript, Tailwind CSS, Responsive Web Design, Portfolio Website, Web Developer, UI Developer, Freelance Web Developer">
-    <link rel="shortcut icon" href="./img/J.png" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description"
+    content="Showcasing professional frontend development projects using HTML, CSS, JavaScript, and Tailwind CSS. Explore my skills, responsive designs, and contact me for web development opportunities.">
+
+  <meta property="og:site_name" content="Josephine Jerome | Frontend Developer">
+  <meta property="og:url" content="https://x.com/nedu_nony/">
+  <meta property="og:url" content="https://x.com/nedu_nony/">
+  <meta property="og:title" content="Josephine Jerome">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Josephine Jerome Portfolio | Frontend Developer.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Josephine Jerome">
+  <meta name="twitter:description" content="Frontend Developer.">
+  <meta name="keywords"
+    content="Frontend Developer, HTML, CSS, JavaScript, Tailwind CSS, Responsive Web Design, Portfolio Website, Web Developer, UI Developer, Freelance Web Developer">
+  <link rel="shortcut icon" href="./img/J.png" type="image/x-icon">
+
 </head>
-<body class="bg-pink-50 flex items-center justify-center min-h-screen">
-  <div class="max-w-sm w-full bg-white p-6 rounded-xl shadow-md">
-    <h2 class="text-2xl font-bold text-center text-pink-700 mb-4">Login</h2>
+
+<body class="body">
+  <div class="center-body">
+    <h2 class="login-header">Login</h2>
     <form id="login-form" class="space-y-4">
       <input type="email" id="email" placeholder="Email" required class="w-full p-2 border rounded-lg" /><br><br>
-      <input type="password" id="password" placeholder="Password" required   class="w-full p-2 border rounded-lg" /><br><br>
-      <button type="submit"  class="w-full bg-pink-600 text-white py-2 rounded-lg hover:bg-pink-700 transition">Login</button>
+      <input type="password" id="password" placeholder="Password" required
+        class="w-full p-2 border rounded-lg" /><br><br>
+      <button type="submit" class="btn login-btn">Login</button>
 
       <p class="text-sm mt-3 text-center">
         <a href="#" id="forgot-password" class="text-blue-600 hover:underline">Forgot your password?</a>
       </p>
-      <p class="text-sm mt-3 text-center">Don't have an account <a href="./signup.html" class="text-pink-700">SignUp</a></p>
+      <p class="text-sm mt-3 text-center">Don't have an account ? <a href="./signup.html"
+          class="text-pink-700">SignUp</a></p>
     </form>
+    <div class="errorContainer">
+      <p id="error-message" class="error-msg"></p>
+    </div>
   </div>
 
-  <p id="error-message" style="color:red;"></p>
+
+
   <div id="toast" class="fixed top-4 right-4 z-50 hidden px-4 py-3 rounded shadow text-white text-sm"></div>
 
   <!-- Firebase SDK -->
-  <script  type="module"  src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
-  <script  type="module"  src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js"></script>
   <script type="module" src="./js/login.js"></script>
 </body>
+
 </html>

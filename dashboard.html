@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Recipe Tracker - Dashboard</title>
@@ -7,81 +8,100 @@
 
   <link rel="shortcut icon" href="./img/J.png" type="image/x-icon">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Showcasing professional frontend development projects using HTML, CSS, JavaScript, and Tailwind CSS. Explore my skills, responsive designs, and contact me for web development opportunities.">
+  <meta name="description"
+    content="Showcasing professional frontend development projects using HTML, CSS, JavaScript, and Tailwind CSS. Explore my skills, responsive designs, and contact me for web development opportunities.">
 
   <meta property="og:site_name" content="Josephine Jerome | Frontend Developer">
   <meta property="og:url" content="https://x.com/nedu_nony/">
   <meta property="og:url" content="https://x.com/nedu_nony/">
   <meta property="og:title" content="Josephine Jerome">
   <meta property="og:type" content="website">
-  <meta property="og:description" content="Josephine Jerome Portfolio | Frontend Developer."><meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Josephine Jerome">
-<meta name="twitter:description" content="Frontend Developer.">
-  <meta name="keywords" content="Frontend Developer, HTML, CSS, JavaScript, Tailwind CSS, Responsive Web Design, Portfolio Website, Web Developer, UI Developer, Freelance Web Developer">
-
+  <meta property="og:description" content="Josephine Jerome Portfolio | Frontend Developer.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Josephine Jerome">
+  <meta name="twitter:description" content="Frontend Developer.">
+  <meta name="keywords"
+    content="Frontend Developer, HTML, CSS, JavaScript, Tailwind CSS, Responsive Web Design, Portfolio Website, Web Developer, UI Developer, Freelance Web Developer">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./css/tailwind.css">
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/custom.css">
+  <script defer src="./js/app.js"></script>
 </head>
-<body class="bg-pink-50 min-h-screen p-4">
+
+<body class="body">
   <div class="max-w-4xl mx-auto">
 
-  <h2 id="welcome-text" class="text-2xl font-bold">Loading...</h2> <hr>
+    <h2 id="welcome-text" class="tertiary-heading">Loading...</h2>
+    <hr>
 
-  <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6">
-    <button id="tab-recipes" class="tab-btn text-blue-600 border-b-2 border-blue-600 font-semibold pb-2">My Recipes</button>
-    <button id="tab-profile" class="tab-btn text-gray-500 hover:text-blue-600 pb-2">Profile Settings</button>
-  </div>
 
-  <section class="mb-4 mt-4" id="recipes-panel" class="space-y-6">
-    <h3>Add New Recipe</h3>
-    <form id="recipe-form" class="bg-white rounded-xl p-4 sm:p-6 max-w-md w-full mx-auto space-y-4">
-      <!--  
+
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-6">
+      <button id="tab-recipes" class="tab-btn text-blue-600 border-b-2 border-blue-600 font-semibold pb-2">My
+        Recipes</button>
+      <button id="tab-profile" class="tab-btn text-gray-500 hover:text-blue-600 pb-2">Profile Settings</button>
+    </div>
+
+    <section class="mb-4 mt-4" id="recipes-panel" class="space-y-6">
+      <h3 class="recipe-header">Add New Recipe</h3>
+      <form id="recipe-form" class="bg-white rounded-xl p-4 sm:p-6 max-w-md w-full mx-auto space-y-4">
+        <!--  
       <input type="url" id="recipe-image" placeholder="Image URL (optional)" class="w-full p-2 border border-gray-300 rounded-md"/>
     -->
 
 
-      <input type="text" id="title" placeholder="Recipe Title" required class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" /><br><br>
-      <textarea id="instructions" placeholder="Instructions" required  class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" ></textarea><br><br>
+        <input type="text" id="title" placeholder="Recipe Title" required
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" /><br><br>
+        <textarea id="instructions" placeholder="Instructions" required
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"></textarea><br><br>
 
-      <button type="submit" class="bg-pink-600 text-white px-4 py-2 rounded-lg hover:bg-pink-700">Save Recipe</button>
-    </form>
+        <button type="submit" class="btn save-recipe">Save
+          Recipe</button>
+      </form>
 
-    <hr class="mt-4">
-    <section class="mt-10 px-4 max-w-6xl mx-auto">
-      <h3 class="text-2xl font-semibold text-pink-700 mb-6 text-center sm:text-left">Your Recipes</h3>
-      <ul id="recipe-list" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3" ></ul>
+      <hr class="mt-4">
+      <section class="mt-10 px-4 max-w-6xl mx-auto">
+        <h3 class="recipe-header">Your
+          Recipes
+        </h3>
+        <ul id="recipe-list" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+          <!-- Recipe items will be dynamically inserted here -->
+
+        </ul>
+      </section>
     </section>
-  </section>
-  <hr>
+    <hr>
 
-  <div id="profile-panel" class="hidden">
-    <form id="profile-form" class="space-y-4">
-      <div>
-        <label class="block font-medium">Current Email</label>
-        <input type="email" id="email" class="w-full border p-2 rounded bg-gray-100" disabled />
-      </div>
-      <div>
-        <label class="block font-medium">Username</label>
-        <input type="text" id="username" class="w-full border p-2 rounded" />
-      </div>
-      <div>
-        <label class="block font-medium">New Email</label>
-        <input type="email" id="new-email" class="w-full border p-2 rounded" />
-      </div>
-      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Changes</button>
-    </form>
-  </div>
+    <div id="profile-panel" class="hidden">
+      <form id="profile-form" class="space-y-4">
+        <div>
+          <label class="block font-medium">Current Email</label>
+          <input type="email" id="email" class="w-full border p-2 rounded bg-gray-100" disabled />
+        </div>
+        <div>
+          <label class="block font-medium">Username</label>
+          <input type="text" id="username" class="w-full border p-2 rounded" />
+        </div>
+        <div>
+          <label class="block font-medium">New Email</label>
+          <input type="email" id="new-email" class="w-full border p-2 rounded" />
+        </div>
+        <button type="submit" class="btn save-changes">Save
+          Changes</button>
+      </form>
+    </div>
 
 
-  <button id="signout-btn" class="mt-6 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Sign Out</button>
+    <button id="signout-btn" class="btn signout">Sign
+      Out</button>
 
-  <div id="toast" class="fixed top-4 right-4 z-50 hidden px-4 py-3 rounded shadow text-white text-sm"></div>
+    <div id="toast" class="fixed top-4 right-4 z-50 hidden px-4 py-3 rounded shadow text-white text-sm"></div>
 
 
   </div>
@@ -97,5 +117,7 @@
 
 
   <script type="module" src="./js/ldashboard.js"></script>
+
 </body>
+
 </html>

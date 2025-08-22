@@ -17,11 +17,15 @@ let isLogin = true;
 // Toggle between Login and Signup
 document.getElementById("toggle-btn").addEventListener("click", () => {
   isLogin = !isLogin;
-  document.getElementById("form-title").innerText = isLogin ? "Login" : "Sign Up";
+  document.getElementById("form-title").innerText = isLogin
+    ? "Login"
+    : "Sign Up";
   document.getElementById("toggle-text").innerText = isLogin
     ? "Don't have an account?"
     : "Already have an account?";
-  document.getElementById("toggle-btn").innerText = isLogin ? "Sign up" : "Login";
+  document.getElementById("toggle-btn").innerText = isLogin
+    ? "Sign up"
+    : "Login";
   errorMessage.innerText = "";
 });
 
